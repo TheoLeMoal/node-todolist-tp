@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://coco:coco@cluster0.fuyt1qw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://theo:theo@cluster0.oxakyup.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
-  .then(() => console.log("MongoDB OK")
+  .then(() => console.log("BDD OK")
   ).catch(err => {
     console.error('Erreur lors de la connexion à MongoDB', err);
 });
