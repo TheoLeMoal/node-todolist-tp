@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des tâches</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Liste des tâches</h1>
+        <div class="card p-3 w-100">
+            <ul>
+                <% tasks.forEach(task => { %>
+                    <li><a href="/tasks/<%= task._id %>"><%= task.titre %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
