@@ -4,6 +4,10 @@ function home(req, res){
     res.render('home');
 }
 
+function newTaskForm(req, res) {
+    res.render('newTask');
+}
+
 async function getTasks(req, res) {
     try {
         const tasks = await Task.find();
@@ -63,6 +67,15 @@ async function updateTaskStatus(req, res) {
     }
 }
 
+async function editTaskForm(req, res) {
+    try {
+        const task = await Task.findById(req.params.id);
+        res.render('editTask', { task });
+    } catch (err) {
+        res.status(500).send('Server Error');
+    }
+}
+
 module.exports = {
     home,
     getTasks,
@@ -70,5 +83,7 @@ module.exports = {
     createTask,
     updateTask,
     deleteTask,
-    updateTaskStatus
+    updateTaskStatus,
+    editTaskForm,
+    newTaskForm
 };
