@@ -11,7 +11,11 @@
         <div  class="card p-5 h-100">
             <h1 class="card-title"><%= task.titre %></h1>
             <p class="card-text"><%= task.description %></p>
-            
+            <form action="/tasks/<%= task._id %>/status" method="post" class="d-inline">
+                <button type="submit" class="btn btn-sm <%= task.compeleter ? 'btn-danger' : 'btn-success' %> w-25">
+                    <%= task.compeleter ? 'non complétée' : 'complétée' %>
+                </button>
+            </form>
         </div>
         <a href="/tasks">Retour à la liste des tâches</a>
     </div>

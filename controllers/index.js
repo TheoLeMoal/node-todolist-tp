@@ -52,11 +52,23 @@ async function deleteTask(req, res) {
     }
 }
 
+async function updateTaskStatus(req, res) {
+    try {
+        const task = await Task.findById(req.params.id);
+        task.compeleter = !task.compeleter;
+        await task.save();
+        res.redirect(`/tasks/${req.params.id}`);
+    } catch (err) {
+        res.status(500).send('Server Error');
+    }
+}
+
 module.exports = {
     home,
     getTasks,
     getTaskById,
     createTask,
     updateTask,
-    deleteTask
+    deleteTask,
+    updateTaskStatus
 };
