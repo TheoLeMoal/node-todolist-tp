@@ -12,7 +12,7 @@
             <h1 class="card-title"><%= task.titre %></h1>
             <p class="card-text"><%= task.description %></p>
             <form action="/tasks/<%= task.id %>/status" method="post" class="d-inline">
-                <button type="submit" class="btn btn-sm <%= task.compeleter ? 'btn-success' : 'btn-danger' %> w-25">
+                <button type="submit" class="btn btn-sm <%= task.compeleter ? 'btn-success' : 'btn-warning' %> w-25">
                     <%= task.compeleter ? 'complétée' : 'non complétée' %>
                 </button>
             </form>

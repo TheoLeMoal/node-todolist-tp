@@ -9,7 +9,7 @@
 <body>
     <div class="container main-content d-flex flex-column justify-content-center">
         <h1 class="mt-5">Modifier la Tâche</h1>
-        <form action="/tasks/<%= task.id %>/update" method="post">  <!-- Note the /update URL -->
+        <form action="/tasks/<%= task.id %>/update" method="post">
             <div class="form-group">
                 <label for="titre">Titre</label>
                 <input type="text" class="form-control" id="titre" name="titre" value="<%= task.titre %>" required>
